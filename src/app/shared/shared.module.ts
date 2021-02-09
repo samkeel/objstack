@@ -1,28 +1,45 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ShellComponent } from './shell/shell.component';
+
+const components = [ShellComponent];
 
 const matModules = [
+  MatSidenavModule,
   MatButtonModule,
   MatIconModule,
   MatToolbarModule,
-  MatSlideToggleModule,
+  MatListModule,
+  MatMenuModule,  
+  MatDialogModule,
   MatFormFieldModule,
-  MatDialogModule
+  MatSlideToggleModule,
+  ReactiveFormsModule,
+  FormsModule
 ];
 
 
 @NgModule({
-  declarations: [],
-  imports: [...matModules,
+  declarations: [
+    ...components
+  ],
+  imports: [
+    ...matModules,
     CommonModule
   ],
-  exports: [...matModules]
+  exports: [
+    ...components,
+    ...matModules
+  ]
 })
 export class SharedModule { }
