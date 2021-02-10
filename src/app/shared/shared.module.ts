@@ -11,6 +11,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShellComponent } from './shell/shell.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 const components = [ShellComponent];
 
@@ -25,7 +26,8 @@ const matModules = [
   MatFormFieldModule,
   MatSlideToggleModule,
   ReactiveFormsModule,
-  FormsModule
+  FormsModule,
+  LayoutModule
 ];
 
 

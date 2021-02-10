@@ -21,12 +21,11 @@
 
             </div>
             <!-- DROPDOWN MENU -->
-            <!-- <app-dropmenu></app-dropmenu> -->
-            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="icon-button with a menu">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Toggle menu">
                 <mat-icon>more_vert</mat-icon>
             </button>
 
-            <mat-menu #menu="matMenu">
+            <mat-menu #menu="matMenu" xPosition="before">
                 <mat-icon>brightness_5</mat-icon>
                 <mat-slide-toggle [(ngModel)]="isDarkTheme" (change)="storeThemeSelection()"></mat-slide-toggle>
                 <mat-icon>bedtime</mat-icon>
