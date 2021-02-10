@@ -1,0 +1,5 @@
+$objstack-primary: mat-palette($mat-indigo, 800, 300, 900);
+$objstack-accent: mat-palette($mat-light-blue);
+$objstack-warn: mat-palette($mat-pink, 600);
+
+$objstack-theme: mat-light-theme($objstack-primary, $objstack-accent, $objstack-warn);

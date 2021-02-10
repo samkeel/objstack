@@ -1,32 +1,34 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
-import { OverlayContainer } from '@angular/cdk/overlay';
+import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit {  
+  get isDarkMode(): boolean {
+    return this.currentTheme === 'theme-dark';
+  }
   title = 'objstack';
+  
+  private currentTheme = 'theme-light';
 
-  @HostBinding('class') className = '';
-
-  toggleControl = new FormControl(false);
-
-  constructor(private dialog: MatDialog, private overlay: OverlayContainer) { }
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    private renderer: Renderer2
+  ) {}
 
   ngOnInit(): void {
-    this.toggleControl.valueChanges.subscribe((darkMode) => {
-      const darkClassName = 'darkMode';
-      this.className = darkMode ? darkClassName : '';
-      if (darkMode) {
-        this.overlay.getContainerElement().classList.add(darkClassName);
-      } else {
-        this.overlay.getContainerElement().classList.remove(darkClassName);
-      }
-    });
-
+    this.currentTheme = localStorage.getItem('activeTheme') || 'theme-light';
+    this.renderer.setAttribute(this.document.body, 'class', this.currentTheme);
   }
+
+  switchMode(isDarkMode: boolean) {
+    this.currentTheme = isDarkMode ? 'theme-dark' : 'theme-light';
+    this.renderer.setAttribute(this.document.body, 'class', this.currentTheme);
+    localStorage.setItem('activeTheme', this.currentTheme);
+  }
+
+
 }

@@ -1,8 +1,10 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { OverlayContainer } from '@angular/cdk/overlay';
+import { MatSlideToggleChange } from '@angular/material/slide-toggle';
+
 
 
 @Component({
@@ -11,7 +13,8 @@ import { OverlayContainer } from '@angular/cdk/overlay';
   styleUrls: ['./shell.component.scss']
 })
 export class ShellComponent implements OnInit {
-  isDarkTheme:boolean = false;
+  @Output()
+  readonly darkModeSwitched = new EventEmitter<boolean>();
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Handset])
     .pipe(
@@ -20,17 +23,16 @@ export class ShellComponent implements OnInit {
     );
 
   constructor(
-    private breakpointObserver: BreakpointObserver,
-    private overlayContainer: OverlayContainer
+    private breakpointObserver: BreakpointObserver
     ) {}
 
+    onDarkModeSwitched({ checked }: MatSlideToggleChange) {
+      this.darkModeSwitched.emit(checked);
+    }
+
   ngOnInit(): void {
-    this.isDarkTheme = localStorage.getItem('theme') === "Dark" ? true:false;
-    console.log(this.isDarkTheme);
+
   }
 
-  storeThemeSelection() {
-    localStorage.setItem('theme', this.isDarkTheme?"Dark":"Light");
-  }
 
 }

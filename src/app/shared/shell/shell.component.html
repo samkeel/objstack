@@ -1,4 +1,4 @@
-<mat-sidenav-container class="sidenav-container mat-app-background" [ngClass]="{'dark-theme-mode': isDarkTheme}">
+<mat-sidenav-container class="sidenav-container mat-app-background">
     <!-- SIDENAV -->
     <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
         [mode]="(isHandset$ | async) ? 'over' : 'side'" [position]="(isHandset$ | async) ? 'end' : 'start'"
@@ -27,7 +27,7 @@
 
             <mat-menu #menu="matMenu" xPosition="before">
                 <mat-icon>brightness_5</mat-icon>
-                <mat-slide-toggle [(ngModel)]="isDarkTheme" (change)="storeThemeSelection()"></mat-slide-toggle>
+                <mat-slide-toggle (change)="onDarkModeSwitched($event)"></mat-slide-toggle>
                 <mat-icon>bedtime</mat-icon>
             </mat-menu>
 
