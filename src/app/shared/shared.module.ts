@@ -14,7 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShellComponent } from './shell/shell.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { HomePageComponent } from '../pages/home-page/home-page.component';
-
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
 
 const components = [ShellComponent, HomePageComponent];
 
@@ -32,7 +33,9 @@ const matModules = [
   MatSlideToggleModule,
   ReactiveFormsModule,
   FormsModule,
-  LayoutModule
+  LayoutModule,
+  MatGridListModule,
+  MatCardModule
 ];
 
 
