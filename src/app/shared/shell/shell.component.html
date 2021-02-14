@@ -8,6 +8,7 @@
             <a mat-list-item routerLink="/" (click)="drawer.close()">Home</a>
             <a mat-list-item routerLink="/login" (click)="drawer.close()">Login</a>
             <a mat-list-item routerLink="/settings" (click)="drawer.close()">Settings</a>
+            <a mat-list-item routerLink="/todo" (click)="drawer.close()">Todo</a>
         </mat-nav-list>
     </mat-sidenav>
 
@@ -20,6 +21,7 @@
             <div *ngIf="!(isHandset$ | async)">
                 <a mat-button routerLink="/login" routerLinkActive="active">Login</a>
                 <a mat-button routerLink="/settings" routerLinkActive="active">Settings</a>
+                <a mat-button routerLink="/todo" routerLinkActive="active">Todo</a>
             </div>
             <!-- DROPDOWN MENU -->
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Toggle menu">
@@ -38,8 +40,6 @@
             </button>
 
         </mat-toolbar>
-
-
         <!-- TRANSCLUSION -->
         <ng-content></ng-content>
     </mat-sidenav-content>

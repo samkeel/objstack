@@ -10,6 +10,9 @@ const routes: Routes = [
   },
   {
     path: 'settings', loadChildren: () => import('./pages/site-settings/site-settings.module').then(m => m.SiteSettingsModule)
+  },
+  {
+    path: 'todo', loadChildren: () => import('./pages/to-do/to-do.module').then(m => m.ToDoModule)
   }
 ];
 
