@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
-
+import { AngularFireAuth } from '@angular/fire/auth';
 
 
 @Component({
@@ -23,7 +23,8 @@ export class ShellComponent implements OnInit {
     );
 
   constructor(
-    private breakpointObserver: BreakpointObserver
+    private breakpointObserver: BreakpointObserver,
+    public afAuth: AngularFireAuth
     ) {}
 
     onDarkModeSwitched({ checked }: MatSlideToggleChange) {
