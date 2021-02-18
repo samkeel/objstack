@@ -45,8 +45,7 @@
             </mat-error>
         </mat-form-field>
 
-        <!-- TODO -->
-        <!-- <mat-error class="server-error">{{ serverMessage }}</mat-error> -->
+        <mat-error class="server-error">{{ serverMessage }}</mat-error>
 
         <button *ngIf="isPasswordReset" mat-stroked-button type="submit" [disabled]="loading">
             Send Reset Email

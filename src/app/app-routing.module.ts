@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { AuthGuard } from './pages/user/auth.guard';
 
 
 const routes: Routes = [
@@ -12,7 +13,9 @@ const routes: Routes = [
     path: 'settings', loadChildren: () => import('./pages/site-settings/site-settings.module').then(m => m.SiteSettingsModule)
   },
   {
-    path: 'todo', loadChildren: () => import('./pages/to-do/to-do.module').then(m => m.ToDoModule)
+    path: 'todo', 
+    loadChildren: () => import('./pages/to-do/to-do.module').then(m => m.ToDoModule),
+    canActivate: [AuthGuard]
   }
 ];
 

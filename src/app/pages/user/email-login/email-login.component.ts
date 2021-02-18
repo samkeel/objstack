@@ -12,6 +12,8 @@ export class EmailLoginComponent implements OnInit {
   type: 'login' | 'signup' | 'reset' = 'signup';
   loading = false;
 
+  serverMessage: string = "";
+
   constructor(private afAuth: AngularFireAuth, private fb: FormBuilder) { }
 
   ngOnInit() {
@@ -75,12 +77,10 @@ export class EmailLoginComponent implements OnInit {
       }
       if (this.isPasswordReset) {
         await this.afAuth.sendPasswordResetEmail(email);
-        // TODO
-        // this.serverMessage = 'Check your email';
+        this.serverMessage = 'Check your email';
       }
     } catch (err) {
-      // TODO
-      // this.serverMessage = err;
+      this.serverMessage = err;
     }
 
     this.loading = false;
