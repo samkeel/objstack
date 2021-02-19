@@ -5,7 +5,7 @@ import { AuthGuard } from './pages/user/auth.guard';
 
 
 const routes: Routes = [
-  {path: '', component: HomePageComponent},
+  { path: '', component: HomePageComponent },
   {
     path: 'login', loadChildren: () => import('./pages/user/user.module').then(m => m.UserModule)
   },
@@ -13,8 +13,13 @@ const routes: Routes = [
     path: 'settings', loadChildren: () => import('./pages/site-settings/site-settings.module').then(m => m.SiteSettingsModule)
   },
   {
-    path: 'todo', 
+    path: 'todo',
     loadChildren: () => import('./pages/to-do/to-do.module').then(m => m.ToDoModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'organise',
+    loadChildren: () => import('./pages/organise/organise.module').then(m => m.OrganiseModule),
     canActivate: [AuthGuard]
   }
 ];
