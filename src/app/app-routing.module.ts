@@ -10,17 +10,13 @@ const routes: Routes = [
     path: 'login', loadChildren: () => import('./pages/user/user.module').then(m => m.UserModule)
   },
   {
-    path: 'settings', loadChildren: () => import('./pages/site-settings/site-settings.module').then(m => m.SiteSettingsModule)
-  },
-  {
-    path: 'todo',
-    loadChildren: () => import('./pages/to-do/to-do.module').then(m => m.ToDoModule),
-    canActivate: [AuthGuard]
-  },
-  {
     path: 'organise',
-    loadChildren: () => import('./pages/organise/organise.module').then(m => m.OrganiseModule),
-    canActivate: [AuthGuard]
+    loadChildren: () => import('./pages/organise/organise.module').then(m => m.OrganiseModule)
+    , canActivate: [AuthGuard]
+  },
+  {
+    path: '**',
+    component: HomePageComponent
   }
 ];
 

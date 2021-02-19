@@ -11,8 +11,6 @@
             <ng-template #elseLoginNavBlock>
                 <a mat-list-item routerLink="/login" (click)="drawer.close(); afAuth.signOut()">Logout</a>
             </ng-template>
-            <a mat-list-item routerLink="/settings" (click)="drawer.close()">Settings</a>
-            <a *ngIf="(afAuth.authState | async)" mat-list-item routerLink="/todo" (click)="drawer.close()">Todo</a>
             <a *ngIf="(afAuth.authState | async)" mat-list-item routerLink="/organise"
                 (click)="drawer.close()">Organise</a>
         </mat-nav-list>
@@ -30,8 +28,6 @@
                 <ng-template #elseLoginBlock>
                     <a mat-button (click)="afAuth.signOut()" routerLink="/login" routerLinkActive="active">Logout</a>
                 </ng-template>
-                <a mat-button routerLink="/settings" routerLinkActive="active">Settings</a>
-                <a *ngIf="(afAuth.authState | async)" mat-button routerLink="/todo" routerLinkActive="active">Todo</a>
                 <a *ngIf="(afAuth.authState | async)" mat-button routerLink="/organise"
                     routerLinkActive="active">Organise</a>
             </div>
