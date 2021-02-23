@@ -50,3 +50,4 @@ Thumbs.db
 /public
 environment.ts
 src/environments/environment.ts
+firebase-debug.log

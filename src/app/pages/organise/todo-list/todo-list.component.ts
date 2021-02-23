@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { toDoModel } from '../../organise/model/todo.model';
-import { TodoService } from '../../organise/service/todo.service';
-
+import { toDoModel } from '../model/todo.model';
+import { TodoService } from '../service/todo.service';
 
 @Component({
-  selector: 'app-to-do-page',
-  templateUrl: './to-do-page.component.html',
-  styleUrls: ['./to-do-page.component.scss']
+  selector: 'app-todo-list',
+  templateUrl: './todo-list.component.html',
+  styleUrls: ['./todo-list.component.scss']
 })
-export class ToDoPageComponent implements OnInit {
+export class TodoListComponent implements OnInit {
   todos: toDoModel[] = [];
   sub: Subscription | undefined;
 

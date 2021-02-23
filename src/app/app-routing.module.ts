@@ -15,6 +15,11 @@ const routes: Routes = [
     , canActivate: [AuthGuard]
   },
   {
+    path: 'todo',
+    loadChildren: () => import('./pages/to-do/to-do.module').then(m => m.ToDoModule)
+    , canActivate: [AuthGuard]
+  },
+  {
     path: '**',
     component: HomePageComponent
   }
