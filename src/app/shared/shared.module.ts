@@ -19,6 +19,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 const components = [ShellComponent, HomePageComponent];
 
@@ -41,7 +42,8 @@ const matModules = [
   MatGridListModule,
   MatCardModule,
   MatSnackBarModule,
-  MatTabsModule
+  MatTabsModule,
+  MatTooltipModule
 ];
 
 
