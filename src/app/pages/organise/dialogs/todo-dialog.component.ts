@@ -7,25 +7,26 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   template: `
   <h1 mat-dialog-title>to do</h1>
   <div mat-dialog-content>
-  <p>To do title:</p>
+    <p>To do title:</p>
     <mat-form-field>
       <input placeholder="title" matInput [(ngModel)]="data.title" />
     </mat-form-field>
-  </div>
-  <mat-form-field>
+
+    <mat-form-field>
       <textarea
         placeholder="Task description"
-        matInput
-        [(ngModel)]="data.description"
+        matInput [(ngModel)]="data.description"
       ></textarea>
     </mat-form-field>
-  <div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()">Cancel</button>
-    <button mat-button [mat-dialog-close]="data.title">
-      Create
-    </button>
+
   </div>
-  <br />
+
+    <div mat-dialog-actions>
+      <button mat-button (click)="onNoClick()">Cancel</button>
+      <button mat-button [mat-dialog-close]="data">
+        Create
+      </button>
+    </div>
 
   `,
   styles: []

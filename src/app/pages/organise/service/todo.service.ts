@@ -21,7 +21,7 @@ export class TodoService {
     return this.db.collection('todos').add({
       ...data,
       uid: user?.uid,
-      description: 'default description',
+      // description: 'default description',
       label: 'yellow'
     })    
   }

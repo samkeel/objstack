@@ -38,8 +38,10 @@ export class TodoListComponent implements OnInit, OnDestroy {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
+        console.log(result)
         this.todoService.createTodo({                 
-          title: result,
+          title: result.title,
+          description: result.description,
           priority: this.todos.length
         });
       }
