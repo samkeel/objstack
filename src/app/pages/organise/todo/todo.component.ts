@@ -14,4 +14,8 @@ export class TodoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  handleDelete() {
+    this.todoService.deleteToDo(this.todo.id);
+  }
+
 }

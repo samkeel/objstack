@@ -20,8 +20,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { DeleteButtonComponent } from './delete-button/delete-button.component';
 
-const components = [ShellComponent, HomePageComponent];
+const components = [ShellComponent, HomePageComponent, DeleteButtonComponent];
 
 const matModules = [
   CommonModule,
@@ -49,7 +50,7 @@ const matModules = [
 
 @NgModule({
   declarations: [
-    ...components
+    ...components    
   ],
   imports: [
     ...matModules,
