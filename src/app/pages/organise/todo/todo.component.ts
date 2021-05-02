@@ -7,6 +7,7 @@ import { TodoService } from '../service/todo.service';
   styleUrls: ['./todo.component.scss']
 })
 export class TodoComponent implements OnInit {
+
   @Input() todo: any;
 
   constructor(private todoService: TodoService) { }
@@ -17,5 +18,7 @@ export class TodoComponent implements OnInit {
   handleDelete() {
     this.todoService.deleteToDo(this.todo.id);
   }
+
+
 
 }

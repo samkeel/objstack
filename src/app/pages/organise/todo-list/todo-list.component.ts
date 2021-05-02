@@ -22,11 +22,11 @@ export class TodoListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.sub = this.todoService
-    .getUserToDos()
-    .subscribe(todos => (this.todos = todos));
+      .getUserToDos()
+      .subscribe(todos => (this.todos = todos));
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.sub.unsubscribe();
   }
 
@@ -38,8 +38,8 @@ export class TodoListComponent implements OnInit, OnDestroy {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        console.log(result)
-        this.todoService.createTodo({                 
+        // console.log(result)
+        this.todoService.createTodo({
           title: result.title,
           description: result.description,
           priority: this.todos.length

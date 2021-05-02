@@ -18,9 +18,9 @@ export class SnackService {
         this.router.navigate(['/login'])
       });
 
-    setTimeout(() => {
-      this.router.navigate(['/login']);
-    }, 7000); //if user doesnt change route via navbar link. reroute page after 7seconds
+    // setTimeout(() => {
+    //   this.router.navigate(['/login']);
+    // }, 7000); //if user doesnt change route via navbar link. reroute page after 7seconds
   }
 
   openSnackBar(message: string, action: string): MatSnackBarRef<SimpleSnackBar> {

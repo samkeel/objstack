@@ -10,17 +10,17 @@
                 (click)="drawer.close()">Login</a>
             <ng-template #elseLoginNavBlock>
                 <a *ngIf="(afAuth.authState | async)" mat-list-item routerLink="/organise"
-                (click)="drawer.close()">Organise</a>
+                    (click)="drawer.close()">Organise</a>
                 <mat-divider></mat-divider>
                 <a mat-list-item routerLink="/login" (click)="drawer.close(); afAuth.signOut()">Logout</a>
             </ng-template>
-            
+
         </mat-nav-list>
     </mat-sidenav>
 
     <mat-sidenav-content>
         <!-- TOP TOOLBAR-->
-        <mat-toolbar color="primary">
+        <mat-toolbar color="primary" class.mat-elevation-z8>
             <span class="logo" routerLink="/">ObjStack</span>
 
             <span class="fill-space"></span>
@@ -28,8 +28,7 @@
                 <a *ngIf="!(afAuth.authState | async); else elseLoginBlock" mat-button routerLink="/login"
                     routerLinkActive="active">Login</a>
                 <ng-template #elseLoginBlock>
-                    <a mat-button routerLink="/organise"
-                    routerLinkActive="active">Organise</a>
+                    <a mat-button routerLink="/organise" routerLinkActive="active">Organise</a>
                     <a mat-button (click)="afAuth.signOut()" routerLink="/login" routerLinkActive="active">Logout</a>
                 </ng-template>
             </div>
@@ -50,7 +49,9 @@
             </button>
 
         </mat-toolbar>
+
         <!-- TRANSCLUSION -->
         <ng-content></ng-content>
+        <!-- TRANSCLUSION -->
     </mat-sidenav-content>
 </mat-sidenav-container>
