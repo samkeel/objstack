@@ -7,6 +7,7 @@ import { TodoService } from '../service/todo.service';
   styleUrls: ['./todo.component.scss']
 })
 export class TodoComponent implements OnInit {
+  toggles = document.querySelectorAll('.todo-toggle');
 
   @Input() todo: any;
 
@@ -18,7 +19,5 @@ export class TodoComponent implements OnInit {
   handleDelete() {
     this.todoService.deleteToDo(this.todo.id);
   }
-
-
 
 }
