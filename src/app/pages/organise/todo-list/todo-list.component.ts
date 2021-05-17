@@ -32,7 +32,7 @@ export class TodoListComponent implements OnInit, OnDestroy {
 
   openBoardDialog(): void {
     const dialogRef = this.dialog.open(TodoDialogComponent, {
-      width: '600px',
+      width: '80vw',
       data: {}
     });
 

@@ -9,7 +9,7 @@
         </mat-card-actions> -->
         <mat-card-subtitle>Priority: {{todo.priority}}</mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content>{{todo.description}}</mat-card-content>
+    <mat-card-content [innerHtml]="todo.description"></mat-card-content>
     <mat-card-actions>
         <app-delete-button (delete)="handleDelete()"></app-delete-button>
     </mat-card-actions>

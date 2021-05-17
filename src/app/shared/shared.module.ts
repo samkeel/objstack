@@ -23,6 +23,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { DeleteButtonComponent } from './delete-button/delete-button.component';
 import { TextFieldModule } from '@angular/cdk/text-field';
 
+import { HttpClientModule} from '@angular/common/http';
+import { AngularEditorModule } from '@kolkov/angular-editor';
+
 const components = [ShellComponent, HomePageComponent, DeleteButtonComponent];
 
 const matModules = [
@@ -46,7 +49,9 @@ const matModules = [
   MatSnackBarModule,
   MatTabsModule,
   MatTooltipModule,
-  TextFieldModule
+  TextFieldModule,
+  HttpClientModule,
+  AngularEditorModule
 ];
 
 
